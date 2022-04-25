@@ -1,0 +1,950 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		210D7AEF27C8782600A86391 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 210D7AEE27C8782600A86391 /* AppDelegate.m */; };
+		210D7AF227C8782600A86391 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 210D7AF127C8782600A86391 /* SceneDelegate.m */; };
+		210D7AFA27C8782800A86391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210D7AF927C8782800A86391 /* Assets.xcassets */; };
+		210D7AFD27C8782800A86391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210D7AFB27C8782800A86391 /* LaunchScreen.storyboard */; };
+		210D7B0027C8782800A86391 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 210D7AFF27C8782800A86391 /* main.m */; };
+		21CD851828167D160000C720 /* FMBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84D528167D150000C720 /* FMBill.m */; };
+		21CD851928167D160000C720 /* FMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84D628167D150000C720 /* FMCategory.m */; };
+		21CD851A28167D160000C720 /* FMBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84D728167D150000C720 /* FMBudget.m */; };
+		21CD851B28167D160000C720 /* FMDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84D828167D150000C720 /* FMDatabaseManager.m */; };
+		21CD851D28167D160000C720 /* FMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84DD28167D150000C720 /* FMTabBarController.m */; };
+		21CD851E28167D160000C720 /* FMBillPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84E128167D150000C720 /* FMBillPageVC.m */; };
+		21CD851F28167D160000C720 /* FMDateSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84E428167D150000C720 /* FMDateSearchVC.m */; };
+		21CD852028167D160000C720 /* BillingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84E628167D150000C720 /* BillingManager.m */; };
+		21CD852128167D160000C720 /* FMSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84E728167D150000C720 /* FMSearchVC.m */; };
+		21CD852228167D160000C720 /* FMBillPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84EC28167D150000C720 /* FMBillPageCell.m */; };
+		21CD852328167D160000C720 /* FMBillPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD84ED28167D150000C720 /* FMBillPageCell.xib */; };
+		21CD852428167D160000C720 /* FMDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84F028167D150000C720 /* FMDatePicker.m */; };
+		21CD852528167D160000C720 /* FMCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84F328167D150000C720 /* FMCollectionView.m */; };
+		21CD852628167D160000C720 /* FMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84F428167D150000C720 /* FMCollectionViewCell.m */; };
+		21CD852728167D160000C720 /* FMCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD84F528167D150000C720 /* FMCollectionViewCell.xib */; };
+		21CD852828167D160000C720 /* FMBillKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD84F828167D150000C720 /* FMBillKeyboard.xib */; };
+		21CD852928167D160000C720 /* FMBillKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84FA28167D150000C720 /* FMBillKeyboard.m */; };
+		21CD852A28167D160000C720 /* FMHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD84FE28167D150000C720 /* FMHomePageVC.m */; };
+		21CD852B28167D160000C720 /* FMHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD850228167D150000C720 /* FMHomeViewCell.m */; };
+		21CD852C28167D160000C720 /* FMHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD850328167D150000C720 /* FMHomeHeaderView.m */; };
+		21CD852D28167D160000C720 /* FMBudgetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD850828167D150000C720 /* FMBudgetManager.m */; };
+		21CD852E28167D160000C720 /* FMBudgetPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD850B28167D160000C720 /* FMBudgetPageVC.m */; };
+		21CD852F28167D160000C720 /* FMKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD850F28167D160000C720 /* FMKeyboard.m */; };
+		21CD853028167D160000C720 /* FMBudgetPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD851128167D160000C720 /* FMBudgetPageCell.m */; };
+		21CD853128167D160000C720 /* FMBudgetPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD851328167D160000C720 /* FMBudgetPageCell.xib */; };
+		21CD853228167D160000C720 /* FMBudgetKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD851528167D160000C720 /* FMBudgetKeyboard.xib */; };
+		21CD853328167D160000C720 /* FMBudgetKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD851628167D160000C720 /* FMBudgetKeyboard.m */; };
+		21CD855728167D800000C720 /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD853728167D800000C720 /* UIColor+HEX.m */; };
+		21CD855828167D800000C720 /* UIView+BorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD853C28167D800000C720 /* UIView+BorderLine.m */; };
+		21CD855928167D800000C720 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD853D28167D800000C720 /* UIView+Extension.m */; };
+		21CD855A28167D800000C720 /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD854028167D800000C720 /* UIFont+Extension.m */; };
+		21CD855B28167D800000C720 /* NSString+Calculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD854328167D800000C720 /* NSString+Calculation.m */; };
+		21CD855C28167D800000C720 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD854528167D800000C720 /* NSArray+Extension.m */; };
+		21CD855D28167D800000C720 /* NSDate+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD854928167D800000C720 /* NSDate+BRPickerView.m */; };
+		21CD855E28167D800000C720 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD854A28167D800000C720 /* NSDate+Extension.m */; };
+		21CD855F28167D800000C720 /* billNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD854E28167D800000C720 /* billNavigationBar.m */; };
+		21CD856028167D800000C720 /* billNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD854F28167D800000C720 /* billNavigationBar.xib */; };
+		21CD856128167D800000C720 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD855428167D800000C720 /* BaseView.m */; };
+		21CD856228167D800000C720 /* BaseCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD855628167D800000C720 /* BaseCollectionCell.m */; };
+		21CD856628167DCB0000C720 /* defaultCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21CD856328167DCB0000C720 /* defaultCategory.plist */; };
+		21CD85742816800E0000C720 /* FMSettingPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD856A2816800E0000C720 /* FMSettingPageVC.m */; };
+		21CD85752816800E0000C720 /* FMCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD856B2816800E0000C720 /* FMCategoryManager.m */; };
+		21CD85762816800E0000C720 /* SettingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD856F2816800E0000C720 /* SettingViewCell.m */; };
+		21CD85772816800E0000C720 /* SettingViewCellaaa.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CD85702816800E0000C720 /* SettingViewCellaaa.m */; };
+		21CD85782816800E0000C720 /* SettingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CD85712816800E0000C720 /* SettingViewCell.xib */; };
+		21CD857C281683F20000C720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CD857B281683F20000C720 /* Main.storyboard */; };
+		C3A8F292D450A664B419CD72 /* libPods-Financial Manager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840411817B525B45CBB4A2FC /* libPods-Financial Manager.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A987361C76C6C7ED8F4C65F /* Pods-Financial Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Financial Manager.release.xcconfig"; path = "Target Support Files/Pods-Financial Manager/Pods-Financial Manager.release.xcconfig"; sourceTree = "<group>"; };
+		210D7AEA27C8782600A86391 /* Financial Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		210D7AED27C8782600A86391 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		210D7AEE27C8782600A86391 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		210D7AF027C8782600A86391 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		210D7AF127C8782600A86391 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		210D7AF927C8782800A86391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		210D7AFC27C8782800A86391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		210D7AFE27C8782800A86391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		210D7AFF27C8782800A86391 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21CD84D228167D150000C720 /* FMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCategory.h; sourceTree = "<group>"; };
+		21CD84D328167D150000C720 /* FMDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseManager.h; sourceTree = "<group>"; };
+		21CD84D428167D150000C720 /* FMBudget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBudget.h; sourceTree = "<group>"; };
+		21CD84D528167D150000C720 /* FMBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBill.m; sourceTree = "<group>"; };
+		21CD84D628167D150000C720 /* FMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCategory.m; sourceTree = "<group>"; };
+		21CD84D728167D150000C720 /* FMBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBudget.m; sourceTree = "<group>"; };
+		21CD84D828167D150000C720 /* FMDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseManager.m; sourceTree = "<group>"; };
+		21CD84D928167D150000C720 /* FMBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBill.h; sourceTree = "<group>"; };
+		21CD84DB28167D150000C720 /* FMTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTabBarController.h; sourceTree = "<group>"; };
+		21CD84DD28167D150000C720 /* FMTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTabBarController.m; sourceTree = "<group>"; };
+		21CD84E128167D150000C720 /* FMBillPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBillPageVC.m; sourceTree = "<group>"; };
+		21CD84E228167D150000C720 /* BillingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingManager.h; sourceTree = "<group>"; };
+		21CD84E328167D150000C720 /* FMSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSearchVC.h; sourceTree = "<group>"; };
+		21CD84E428167D150000C720 /* FMDateSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDateSearchVC.m; sourceTree = "<group>"; };
+		21CD84E528167D150000C720 /* FMBillPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBillPageVC.h; sourceTree = "<group>"; };
+		21CD84E628167D150000C720 /* BillingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingManager.m; sourceTree = "<group>"; };
+		21CD84E728167D150000C720 /* FMSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSearchVC.m; sourceTree = "<group>"; };
+		21CD84E828167D150000C720 /* FMDateSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDateSearchVC.h; sourceTree = "<group>"; };
+		21CD84EB28167D150000C720 /* FMBillPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBillPageCell.h; sourceTree = "<group>"; };
+		21CD84EC28167D150000C720 /* FMBillPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBillPageCell.m; sourceTree = "<group>"; };
+		21CD84ED28167D150000C720 /* FMBillPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMBillPageCell.xib; sourceTree = "<group>"; };
+		21CD84EF28167D150000C720 /* FMDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatePicker.h; sourceTree = "<group>"; };
+		21CD84F028167D150000C720 /* FMDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatePicker.m; sourceTree = "<group>"; };
+		21CD84F228167D150000C720 /* FMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCollectionViewCell.h; sourceTree = "<group>"; };
+		21CD84F328167D150000C720 /* FMCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCollectionView.m; sourceTree = "<group>"; };
+		21CD84F428167D150000C720 /* FMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCollectionViewCell.m; sourceTree = "<group>"; };
+		21CD84F528167D150000C720 /* FMCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMCollectionViewCell.xib; sourceTree = "<group>"; };
+		21CD84F628167D150000C720 /* FMCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCollectionView.h; sourceTree = "<group>"; };
+		21CD84F828167D150000C720 /* FMBillKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMBillKeyboard.xib; sourceTree = "<group>"; };
+		21CD84F928167D150000C720 /* FMBillKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBillKeyboard.h; sourceTree = "<group>"; };
+		21CD84FA28167D150000C720 /* FMBillKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBillKeyboard.m; sourceTree = "<group>"; };
+		21CD84FE28167D150000C720 /* FMHomePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMHomePageVC.m; sourceTree = "<group>"; };
+		21CD84FF28167D150000C720 /* FMHomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHomePageVC.h; sourceTree = "<group>"; };
+		21CD850128167D150000C720 /* FMHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHomeHeaderView.h; sourceTree = "<group>"; };
+		21CD850228167D150000C720 /* FMHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMHomeViewCell.m; sourceTree = "<group>"; };
+		21CD850328167D150000C720 /* FMHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMHomeHeaderView.m; sourceTree = "<group>"; };
+		21CD850428167D150000C720 /* FMHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHomeViewCell.h; sourceTree = "<group>"; };
+		21CD850828167D150000C720 /* FMBudgetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBudgetManager.m; sourceTree = "<group>"; };
+		21CD850928167D160000C720 /* FMBudgetPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBudgetPageVC.h; sourceTree = "<group>"; };
+		21CD850A28167D160000C720 /* FMBudgetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBudgetManager.h; sourceTree = "<group>"; };
+		21CD850B28167D160000C720 /* FMBudgetPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBudgetPageVC.m; sourceTree = "<group>"; };
+		21CD850E28167D160000C720 /* FMKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMKeyboard.h; sourceTree = "<group>"; };
+		21CD850F28167D160000C720 /* FMKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMKeyboard.m; sourceTree = "<group>"; };
+		21CD851128167D160000C720 /* FMBudgetPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBudgetPageCell.m; sourceTree = "<group>"; };
+		21CD851228167D160000C720 /* FMBudgetPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBudgetPageCell.h; sourceTree = "<group>"; };
+		21CD851328167D160000C720 /* FMBudgetPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMBudgetPageCell.xib; sourceTree = "<group>"; };
+		21CD851528167D160000C720 /* FMBudgetKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMBudgetKeyboard.xib; sourceTree = "<group>"; };
+		21CD851628167D160000C720 /* FMBudgetKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBudgetKeyboard.m; sourceTree = "<group>"; };
+		21CD851728167D160000C720 /* FMBudgetKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBudgetKeyboard.h; sourceTree = "<group>"; };
+		21CD853728167D800000C720 /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
+		21CD853828167D800000C720 /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
+		21CD853A28167D800000C720 /* UIView+BorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BorderLine.h"; sourceTree = "<group>"; };
+		21CD853B28167D800000C720 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		21CD853C28167D800000C720 /* UIView+BorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BorderLine.m"; sourceTree = "<group>"; };
+		21CD853D28167D800000C720 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		21CD853F28167D800000C720 /* UIFont+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extension.h"; sourceTree = "<group>"; };
+		21CD854028167D800000C720 /* UIFont+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extension.m"; sourceTree = "<group>"; };
+		21CD854228167D800000C720 /* NSString+Calculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Calculation.h"; sourceTree = "<group>"; };
+		21CD854328167D800000C720 /* NSString+Calculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Calculation.m"; sourceTree = "<group>"; };
+		21CD854528167D800000C720 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		21CD854628167D800000C720 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		21CD854828167D800000C720 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		21CD854928167D800000C720 /* NSDate+BRPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BRPickerView.m"; sourceTree = "<group>"; };
+		21CD854A28167D800000C720 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		21CD854B28167D800000C720 /* NSDate+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BRPickerView.h"; sourceTree = "<group>"; };
+		21CD854E28167D800000C720 /* billNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = billNavigationBar.m; sourceTree = "<group>"; };
+		21CD854F28167D800000C720 /* billNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = billNavigationBar.xib; sourceTree = "<group>"; };
+		21CD855028167D800000C720 /* billNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = billNavigationBar.h; sourceTree = "<group>"; };
+		21CD855328167D800000C720 /* BaseCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionCell.h; sourceTree = "<group>"; };
+		21CD855428167D800000C720 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		21CD855528167D800000C720 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		21CD855628167D800000C720 /* BaseCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionCell.m; sourceTree = "<group>"; };
+		21CD856328167DCB0000C720 /* defaultCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultCategory.plist; sourceTree = "<group>"; };
+		21CD856428167DCB0000C720 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		21CD856528167DCB0000C720 /* KKPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPrefixHeader.pch; sourceTree = "<group>"; };
+		21CD856A2816800E0000C720 /* FMSettingPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSettingPageVC.m; sourceTree = "<group>"; };
+		21CD856B2816800E0000C720 /* FMCategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCategoryManager.m; sourceTree = "<group>"; };
+		21CD856C2816800E0000C720 /* FMSettingPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSettingPageVC.h; sourceTree = "<group>"; };
+		21CD856D2816800E0000C720 /* FMCategoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCategoryManager.h; sourceTree = "<group>"; };
+		21CD856F2816800E0000C720 /* SettingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewCell.m; sourceTree = "<group>"; };
+		21CD85702816800E0000C720 /* SettingViewCellaaa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewCellaaa.m; sourceTree = "<group>"; };
+		21CD85712816800E0000C720 /* SettingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewCell.xib; sourceTree = "<group>"; };
+		21CD85722816800E0000C720 /* SettingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewCell.h; sourceTree = "<group>"; };
+		21CD85732816800E0000C720 /* SettingViewCellaaa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewCellaaa.h; sourceTree = "<group>"; };
+		21CD857B281683F20000C720 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		840411817B525B45CBB4A2FC /* libPods-Financial Manager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Financial Manager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3B063D382EDA3F886D34535 /* Pods-Financial Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Financial Manager.debug.xcconfig"; path = "Target Support Files/Pods-Financial Manager/Pods-Financial Manager.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		210D7AE727C8782600A86391 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A8F292D450A664B419CD72 /* libPods-Financial Manager.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01096F695A19FC859D68361B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				840411817B525B45CBB4A2FC /* libPods-Financial Manager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		210D7AE127C8782600A86391 = {
+			isa = PBXGroup;
+			children = (
+				210D7AEC27C8782600A86391 /* Financial Manager */,
+				210D7AEB27C8782600A86391 /* Products */,
+				28713365862DD5C20A91761A /* Pods */,
+				01096F695A19FC859D68361B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		210D7AEB27C8782600A86391 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				210D7AEA27C8782600A86391 /* Financial Manager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		210D7AEC27C8782600A86391 /* Financial Manager */ = {
+			isa = PBXGroup;
+			children = (
+				210D7B0627C878E300A86391 /* Classes */,
+				210D7AED27C8782600A86391 /* AppDelegate.h */,
+				210D7AEE27C8782600A86391 /* AppDelegate.m */,
+				210D7AF027C8782600A86391 /* SceneDelegate.h */,
+				210D7AF127C8782600A86391 /* SceneDelegate.m */,
+				21CD856428167DCB0000C720 /* Common.h */,
+				21CD856328167DCB0000C720 /* defaultCategory.plist */,
+				21CD856528167DCB0000C720 /* KKPrefixHeader.pch */,
+				210D7AF927C8782800A86391 /* Assets.xcassets */,
+				210D7AFB27C8782800A86391 /* LaunchScreen.storyboard */,
+				210D7AFE27C8782800A86391 /* Info.plist */,
+				210D7AFF27C8782800A86391 /* main.m */,
+				21CD857B281683F20000C720 /* Main.storyboard */,
+			);
+			path = "Financial Manager";
+			sourceTree = "<group>";
+		};
+		210D7B0627C878E300A86391 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21CD85672816800E0000C720 /* FMSettingPage */,
+				21CD853428167D800000C720 /* Base */,
+				21CD84DE28167D150000C720 /* FMBillPage */,
+				21CD850528167D150000C720 /* FMBudgetPage */,
+				21CD84FB28167D150000C720 /* FMHomePage */,
+				21CD84D028167D150000C720 /* FMMain */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21CD84D028167D150000C720 /* FMMain */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84D128167D150000C720 /* Database */,
+				21CD84DB28167D150000C720 /* FMTabBarController.h */,
+				21CD84DD28167D150000C720 /* FMTabBarController.m */,
+			);
+			path = FMMain;
+			sourceTree = "<group>";
+		};
+		21CD84D128167D150000C720 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84D228167D150000C720 /* FMCategory.h */,
+				21CD84D328167D150000C720 /* FMDatabaseManager.h */,
+				21CD84D428167D150000C720 /* FMBudget.h */,
+				21CD84D528167D150000C720 /* FMBill.m */,
+				21CD84D628167D150000C720 /* FMCategory.m */,
+				21CD84D728167D150000C720 /* FMBudget.m */,
+				21CD84D828167D150000C720 /* FMDatabaseManager.m */,
+				21CD84D928167D150000C720 /* FMBill.h */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		21CD84DE28167D150000C720 /* FMBillPage */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84DF28167D150000C720 /* Models */,
+				21CD84E028167D150000C720 /* Controllers */,
+				21CD84E928167D150000C720 /* Views */,
+			);
+			path = FMBillPage;
+			sourceTree = "<group>";
+		};
+		21CD84DF28167D150000C720 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21CD84E028167D150000C720 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84E128167D150000C720 /* FMBillPageVC.m */,
+				21CD84E228167D150000C720 /* BillingManager.h */,
+				21CD84E328167D150000C720 /* FMSearchVC.h */,
+				21CD84E428167D150000C720 /* FMDateSearchVC.m */,
+				21CD84E528167D150000C720 /* FMBillPageVC.h */,
+				21CD84E628167D150000C720 /* BillingManager.m */,
+				21CD84E728167D150000C720 /* FMSearchVC.m */,
+				21CD84E828167D150000C720 /* FMDateSearchVC.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21CD84E928167D150000C720 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84EA28167D150000C720 /* Cell */,
+				21CD84EE28167D150000C720 /* DatePickerView */,
+				21CD84F128167D150000C720 /* CategoryView */,
+				21CD84F728167D150000C720 /* KeyBoard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		21CD84EA28167D150000C720 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84EB28167D150000C720 /* FMBillPageCell.h */,
+				21CD84EC28167D150000C720 /* FMBillPageCell.m */,
+				21CD84ED28167D150000C720 /* FMBillPageCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		21CD84EE28167D150000C720 /* DatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84EF28167D150000C720 /* FMDatePicker.h */,
+				21CD84F028167D150000C720 /* FMDatePicker.m */,
+			);
+			path = DatePickerView;
+			sourceTree = "<group>";
+		};
+		21CD84F128167D150000C720 /* CategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84F228167D150000C720 /* FMCollectionViewCell.h */,
+				21CD84F328167D150000C720 /* FMCollectionView.m */,
+				21CD84F428167D150000C720 /* FMCollectionViewCell.m */,
+				21CD84F528167D150000C720 /* FMCollectionViewCell.xib */,
+				21CD84F628167D150000C720 /* FMCollectionView.h */,
+			);
+			path = CategoryView;
+			sourceTree = "<group>";
+		};
+		21CD84F728167D150000C720 /* KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84F828167D150000C720 /* FMBillKeyboard.xib */,
+				21CD84F928167D150000C720 /* FMBillKeyboard.h */,
+				21CD84FA28167D150000C720 /* FMBillKeyboard.m */,
+			);
+			path = KeyBoard;
+			sourceTree = "<group>";
+		};
+		21CD84FB28167D150000C720 /* FMHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84FC28167D150000C720 /* Models */,
+				21CD84FD28167D150000C720 /* Controllers */,
+				21CD850028167D150000C720 /* Views */,
+			);
+			path = FMHomePage;
+			sourceTree = "<group>";
+		};
+		21CD84FC28167D150000C720 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21CD84FD28167D150000C720 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21CD84FE28167D150000C720 /* FMHomePageVC.m */,
+				21CD84FF28167D150000C720 /* FMHomePageVC.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21CD850028167D150000C720 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21CD850128167D150000C720 /* FMHomeHeaderView.h */,
+				21CD850228167D150000C720 /* FMHomeViewCell.m */,
+				21CD850328167D150000C720 /* FMHomeHeaderView.m */,
+				21CD850428167D150000C720 /* FMHomeViewCell.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		21CD850528167D150000C720 /* FMBudgetPage */ = {
+			isa = PBXGroup;
+			children = (
+				21CD850628167D150000C720 /* Models */,
+				21CD850728167D150000C720 /* Controllers */,
+				21CD850C28167D160000C720 /* Views */,
+			);
+			path = FMBudgetPage;
+			sourceTree = "<group>";
+		};
+		21CD850628167D150000C720 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21CD850728167D150000C720 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21CD850828167D150000C720 /* FMBudgetManager.m */,
+				21CD850928167D160000C720 /* FMBudgetPageVC.h */,
+				21CD850A28167D160000C720 /* FMBudgetManager.h */,
+				21CD850B28167D160000C720 /* FMBudgetPageVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21CD850C28167D160000C720 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21CD850D28167D160000C720 /* baseView */,
+				21CD851028167D160000C720 /* Cell */,
+				21CD851428167D160000C720 /* KeyBoard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		21CD850D28167D160000C720 /* baseView */ = {
+			isa = PBXGroup;
+			children = (
+				21CD850E28167D160000C720 /* FMKeyboard.h */,
+				21CD850F28167D160000C720 /* FMKeyboard.m */,
+			);
+			path = baseView;
+			sourceTree = "<group>";
+		};
+		21CD851028167D160000C720 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				21CD851128167D160000C720 /* FMBudgetPageCell.m */,
+				21CD851228167D160000C720 /* FMBudgetPageCell.h */,
+				21CD851328167D160000C720 /* FMBudgetPageCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		21CD851428167D160000C720 /* KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				21CD851528167D160000C720 /* FMBudgetKeyboard.xib */,
+				21CD851628167D160000C720 /* FMBudgetKeyboard.m */,
+				21CD851728167D160000C720 /* FMBudgetKeyboard.h */,
+			);
+			path = KeyBoard;
+			sourceTree = "<group>";
+		};
+		21CD853428167D800000C720 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				21CD853528167D800000C720 /* Category */,
+				21CD854D28167D800000C720 /* Controllers */,
+				21CD855228167D800000C720 /* Base */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		21CD853528167D800000C720 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				21CD853628167D800000C720 /* UIColor */,
+				21CD853928167D800000C720 /* UIView */,
+				21CD853E28167D800000C720 /* UIFont */,
+				21CD854128167D800000C720 /* NSString */,
+				21CD854428167D800000C720 /* NSArray */,
+				21CD854728167D800000C720 /* NSDate */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		21CD853628167D800000C720 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				21CD853728167D800000C720 /* UIColor+HEX.m */,
+				21CD853828167D800000C720 /* UIColor+HEX.h */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		21CD853928167D800000C720 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				21CD853A28167D800000C720 /* UIView+BorderLine.h */,
+				21CD853B28167D800000C720 /* UIView+Extension.h */,
+				21CD853C28167D800000C720 /* UIView+BorderLine.m */,
+				21CD853D28167D800000C720 /* UIView+Extension.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		21CD853E28167D800000C720 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				21CD853F28167D800000C720 /* UIFont+Extension.h */,
+				21CD854028167D800000C720 /* UIFont+Extension.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		21CD854128167D800000C720 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				21CD854228167D800000C720 /* NSString+Calculation.h */,
+				21CD854328167D800000C720 /* NSString+Calculation.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		21CD854428167D800000C720 /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				21CD854528167D800000C720 /* NSArray+Extension.m */,
+				21CD854628167D800000C720 /* NSArray+Extension.h */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		21CD854728167D800000C720 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				21CD854828167D800000C720 /* NSDate+Extension.h */,
+				21CD854928167D800000C720 /* NSDate+BRPickerView.m */,
+				21CD854A28167D800000C720 /* NSDate+Extension.m */,
+				21CD854B28167D800000C720 /* NSDate+BRPickerView.h */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		21CD854D28167D800000C720 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21CD854E28167D800000C720 /* billNavigationBar.m */,
+				21CD854F28167D800000C720 /* billNavigationBar.xib */,
+				21CD855028167D800000C720 /* billNavigationBar.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21CD855228167D800000C720 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				21CD855328167D800000C720 /* BaseCollectionCell.h */,
+				21CD855428167D800000C720 /* BaseView.m */,
+				21CD855528167D800000C720 /* BaseView.h */,
+				21CD855628167D800000C720 /* BaseCollectionCell.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		21CD85672816800E0000C720 /* FMSettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				21CD85682816800E0000C720 /* Models */,
+				21CD85692816800E0000C720 /* Controllers */,
+				21CD856E2816800E0000C720 /* Views */,
+			);
+			path = FMSettingPage;
+			sourceTree = "<group>";
+		};
+		21CD85682816800E0000C720 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21CD85692816800E0000C720 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21CD856A2816800E0000C720 /* FMSettingPageVC.m */,
+				21CD856B2816800E0000C720 /* FMCategoryManager.m */,
+				21CD856C2816800E0000C720 /* FMSettingPageVC.h */,
+				21CD856D2816800E0000C720 /* FMCategoryManager.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21CD856E2816800E0000C720 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21CD856F2816800E0000C720 /* SettingViewCell.m */,
+				21CD85702816800E0000C720 /* SettingViewCellaaa.m */,
+				21CD85712816800E0000C720 /* SettingViewCell.xib */,
+				21CD85722816800E0000C720 /* SettingViewCell.h */,
+				21CD85732816800E0000C720 /* SettingViewCellaaa.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28713365862DD5C20A91761A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3B063D382EDA3F886D34535 /* Pods-Financial Manager.debug.xcconfig */,
+				0A987361C76C6C7ED8F4C65F /* Pods-Financial Manager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		210D7AE927C8782600A86391 /* Financial Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 210D7B0327C8782800A86391 /* Build configuration list for PBXNativeTarget "Financial Manager" */;
+			buildPhases = (
+				2FFDCE39BDDE66FB39DF1579 /* [CP] Check Pods Manifest.lock */,
+				210D7AE627C8782600A86391 /* Sources */,
+				210D7AE727C8782600A86391 /* Frameworks */,
+				210D7AE827C8782600A86391 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Financial Manager";
+			productName = "Financial Manager";
+			productReference = 210D7AEA27C8782600A86391 /* Financial Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		210D7AE227C8782600A86391 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					210D7AE927C8782600A86391 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 210D7AE527C8782600A86391 /* Build configuration list for PBXProject "Financial Manager" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 210D7AE127C8782600A86391;
+			productRefGroup = 210D7AEB27C8782600A86391 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				210D7AE927C8782600A86391 /* Financial Manager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		210D7AE827C8782600A86391 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CD856628167DCB0000C720 /* defaultCategory.plist in Resources */,
+				210D7AFD27C8782800A86391 /* LaunchScreen.storyboard in Resources */,
+				21CD856028167D800000C720 /* billNavigationBar.xib in Resources */,
+				210D7AFA27C8782800A86391 /* Assets.xcassets in Resources */,
+				21CD85782816800E0000C720 /* SettingViewCell.xib in Resources */,
+				21CD857C281683F20000C720 /* Main.storyboard in Resources */,
+				21CD852328167D160000C720 /* FMBillPageCell.xib in Resources */,
+				21CD852728167D160000C720 /* FMCollectionViewCell.xib in Resources */,
+				21CD853228167D160000C720 /* FMBudgetKeyboard.xib in Resources */,
+				21CD852828167D160000C720 /* FMBillKeyboard.xib in Resources */,
+				21CD853128167D160000C720 /* FMBudgetPageCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FFDCE39BDDE66FB39DF1579 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Financial Manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		210D7AE627C8782600A86391 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CD855C28167D800000C720 /* NSArray+Extension.m in Sources */,
+				21CD851928167D160000C720 /* FMCategory.m in Sources */,
+				21CD852528167D160000C720 /* FMCollectionView.m in Sources */,
+				21CD85742816800E0000C720 /* FMSettingPageVC.m in Sources */,
+				21CD852028167D160000C720 /* BillingManager.m in Sources */,
+				21CD85762816800E0000C720 /* SettingViewCell.m in Sources */,
+				21CD853028167D160000C720 /* FMBudgetPageCell.m in Sources */,
+				210D7AEF27C8782600A86391 /* AppDelegate.m in Sources */,
+				21CD851A28167D160000C720 /* FMBudget.m in Sources */,
+				21CD855F28167D800000C720 /* billNavigationBar.m in Sources */,
+				210D7B0027C8782800A86391 /* main.m in Sources */,
+				21CD852228167D160000C720 /* FMBillPageCell.m in Sources */,
+				21CD852B28167D160000C720 /* FMHomeViewCell.m in Sources */,
+				21CD855928167D800000C720 /* UIView+Extension.m in Sources */,
+				21CD85772816800E0000C720 /* SettingViewCellaaa.m in Sources */,
+				21CD852628167D160000C720 /* FMCollectionViewCell.m in Sources */,
+				21CD851F28167D160000C720 /* FMDateSearchVC.m in Sources */,
+				21CD853328167D160000C720 /* FMBudgetKeyboard.m in Sources */,
+				21CD856228167D800000C720 /* BaseCollectionCell.m in Sources */,
+				21CD855A28167D800000C720 /* UIFont+Extension.m in Sources */,
+				21CD855728167D800000C720 /* UIColor+HEX.m in Sources */,
+				21CD852928167D160000C720 /* FMBillKeyboard.m in Sources */,
+				21CD851E28167D160000C720 /* FMBillPageVC.m in Sources */,
+				21CD85752816800E0000C720 /* FMCategoryManager.m in Sources */,
+				21CD852F28167D160000C720 /* FMKeyboard.m in Sources */,
+				21CD852D28167D160000C720 /* FMBudgetManager.m in Sources */,
+				21CD855828167D800000C720 /* UIView+BorderLine.m in Sources */,
+				21CD856128167D800000C720 /* BaseView.m in Sources */,
+				21CD852A28167D160000C720 /* FMHomePageVC.m in Sources */,
+				21CD851B28167D160000C720 /* FMDatabaseManager.m in Sources */,
+				21CD851828167D160000C720 /* FMBill.m in Sources */,
+				21CD855B28167D800000C720 /* NSString+Calculation.m in Sources */,
+				21CD852C28167D160000C720 /* FMHomeHeaderView.m in Sources */,
+				21CD852128167D160000C720 /* FMSearchVC.m in Sources */,
+				21CD855D28167D800000C720 /* NSDate+BRPickerView.m in Sources */,
+				21CD851D28167D160000C720 /* FMTabBarController.m in Sources */,
+				21CD852428167D160000C720 /* FMDatePicker.m in Sources */,
+				210D7AF227C8782600A86391 /* SceneDelegate.m in Sources */,
+				21CD855E28167D800000C720 /* NSDate+Extension.m in Sources */,
+				21CD852E28167D160000C720 /* FMBudgetPageVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		210D7AFB27C8782800A86391 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210D7AFC27C8782800A86391 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		210D7B0127C8782800A86391 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		210D7B0227C8782800A86391 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		210D7B0427C8782800A86391 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3B063D382EDA3F886D34535 /* Pods-Financial Manager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Financial Manager/KKPrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Financial Manager/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.peyet.ios.Financial-Manager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		210D7B0527C8782800A86391 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A987361C76C6C7ED8F4C65F /* Pods-Financial Manager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Financial Manager/KKPrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Financial Manager/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.peyet.ios.Financial-Manager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		210D7AE527C8782600A86391 /* Build configuration list for PBXProject "Financial Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210D7B0127C8782800A86391 /* Debug */,
+				210D7B0227C8782800A86391 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		210D7B0327C8782800A86391 /* Build configuration list for PBXNativeTarget "Financial Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210D7B0427C8782800A86391 /* Debug */,
+				210D7B0527C8782800A86391 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 210D7AE227C8782600A86391 /* Project object */;
+}
