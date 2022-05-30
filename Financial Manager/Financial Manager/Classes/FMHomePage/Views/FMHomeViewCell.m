@@ -256,11 +256,13 @@
                               .borderRadiusTopRightSet((id)@"20%")
                               .nameSet(@"收入")
                               .dataSet(income))];
+        __weak typeof(self) weakSelf2 = strongSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
+            __strong typeof(self) strongSelf2 = weakSelf2;
 //            [strongSelf.aaChartView aa_onlyRefreshTheChartDataWithChartModelSeries:seriesSet];
-            strongSelf.aaChartModel.categoriesSet(categoriesSet)
+            strongSelf2.aaChartModel.categoriesSet(categoriesSet)
                 .seriesSet(seriesSet);
-            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+            [strongSelf2.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
         });
     });
 }
@@ -294,10 +296,12 @@
                                  .fillColorSet((id)gradientColorDic1)
                                .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
                                .dataSet(seriesArray)];
+        __weak typeof(self) weakSelf2 = strongSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            strongSelf.aaChartModel.categoriesSet(categoriesSet)
+            __strong typeof(self) strongSelf2 = weakSelf2;
+            strongSelf2.aaChartModel.categoriesSet(categoriesSet)
                 .seriesSet(seriesSet);
-            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+            [strongSelf2.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
         });
     });
 }
@@ -317,10 +321,12 @@
                                  .borderWidthSet(@0)//描边的宽度
                                  .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
              .dataSet(seriesArray)];
-
+        
+        __weak typeof(self) weakSelf2 = strongSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            strongSelf.aaChartModel.seriesSet(seriesSet);
-            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+            __strong typeof(self) strongSelf2 = weakSelf2;
+            strongSelf2.aaChartModel.seriesSet(seriesSet);
+            [strongSelf2.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
         });
 
     });
@@ -360,10 +366,12 @@
                             // .colorSet(@"#D8D8D8")
                             .dataSet(seriesArray.copy);
 
+        __weak typeof(self) weakSelf2 = strongSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            strongSelf.aaChartModel.categoriesSet(categories)
+            __strong typeof(self) strongSelf2 = weakSelf2;
+            strongSelf2.aaChartModel.categoriesSet(categories)
                 .seriesSet(@[column1, column2]);
-            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+            [strongSelf2.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
         });
     });
 }
@@ -399,14 +407,16 @@
             maxAmount = 0;
         }
 
+        __weak typeof(self) weakSelf2 = strongSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            strongSelf.aaChartModel.categoriesSet(categoriesSet)
+            __strong typeof(self) strongSelf2 = weakSelf2;
+            strongSelf2.aaChartModel.categoriesSet(categoriesSet)
                 .seriesSet(@[
                 AASeriesElement.new
                 .nameSet(@"消费偏好")
                 .dataSet(seriesArray),
                        ]);
-            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+            [strongSelf2.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
         });
 
     });
