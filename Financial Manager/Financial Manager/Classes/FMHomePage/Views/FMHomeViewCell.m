@@ -65,23 +65,18 @@
 
 /// 刷新cell
 - (void)reloadData {
-    NSArray<AASeriesElement *> *series;
     if ([self.cellType isEqualToString:@"消费建议"]) {
         [self updateSuggestionView];
     } else if ([self.cellType isEqualToString:@"近期消费趋势"]) {
-        series = [self getRecentConsumptionModelSeries];
+        [self getRecentConsumptionModelSeries];
     } else if ([self.cellType isEqualToString:@"本月消费趋势"]) {
-        series = [self getMonthlyConsumptionModelSeries];
+        [self getMonthlyConsumptionModelSeries];
     } else if ([self.cellType isEqualToString:@"预算汇总"]) {
-        series = [self getTotalBudgetModelSeries];
+        [self getTotalBudgetModelSeries];
     } else if ([self.cellType isEqualToString:@"预算使用详情"]) {
-        series = [self getBudgetUsageModelSeries];
+        [self getBudgetUsageModelSeries];
     } else if ([self.cellType isEqualToString:@"消费偏好"]) {
-//        series = [self getConsumerPreferenceModelSeries];
-    }
-    /*仅仅更新 AAChartModel 对象的 series 属性时,动态刷新图表*/
-    if (series) {
-        [_aaChartView aa_onlyRefreshTheChartDataWithChartModelSeries:series];
+        [self getConsumerPreferenceModelSeries];
     }
 }
 
@@ -134,134 +129,58 @@
 
 
 - (void)configureRecentConsumptionModel {
-    NSString *titleSet;
-    NSMutableArray *categoriesSet = [NSMutableArray new];
-
     // 图表标题
-    titleSet = @"近期消费";
-    // 图表横轴的内容
-    [categoriesSet addObjectsFromArray:@[@"一", @"二", @"三", @"四", @"五", @"六", @"日"]];
+    NSString *titleSet = @"近期消费";
     // 数据内容
-    // 7天消费数据
-    NSArray *seriesSet = [self getRecentConsumptionModelSeries];
     AAChartModel *aaChartModel= AAObject(AAChartModel)
-    .chartTypeSet(AAChartTypeColumn)//设置图表的类型(这里以设置的为折线面积图为例)
-    .titleSet(titleSet)//设置图表标题
-//        .stackingSet(AAChartStackingTypeNormal)
-    .categoriesSet(categoriesSet)//图表横轴的内容
-    //设置图表 y 轴的单位
-    .seriesSet(seriesSet);
+    .chartTypeSet(AAChartTypeColumn)//设置图表的类型
+    .titleSet(titleSet);//设置图表标题
     _aaChartModel = aaChartModel;
 }
 
 
 - (void)configureMonthlyConsumptionModel {
-    NSString *titleSet;
-
     // 图表标题
-    titleSet = @"本月消费趋势";
-    
-    NSMutableArray *categoriesSet = [NSMutableArray new];
-    NSDate *beginDay = [[[NSDate date] getZeroToday] begindayOfMonth];
-    NSDate *lastDay = [[[[NSDate date] getZeroToday] lastdayOfMonth] dateAfterDay:1];
-    for (int day = 1; ![beginDay isSameDay:lastDay] ; beginDay = [beginDay dateAfterDay:1], day++) {
-        [categoriesSet addObject:[NSString stringWithFormat:@"%d", day]];
-    }
-
+    NSString *titleSet = @"本月消费趋势";
 
     // 数据内容
-    NSArray *seriesSet = [self getMonthlyConsumptionModelSeries];
     AAChartModel *aaChartModel= AAObject(AAChartModel)
     .markerRadiusSet(@1.0)//marker点半径为8个像素
     .chartTypeSet(AAChartTypeAreaspline)//设置图表的类型(这里以设置的为折线面积图为例)
-    .titleSet(titleSet)//设置图表标题
-    .categoriesSet(categoriesSet)//图表横轴的内容
-    //设置图表 y 轴的单位
-    .seriesSet(seriesSet);
+    .titleSet(titleSet);//设置图表标题
     _aaChartModel = aaChartModel;
 }
 
 
 - (void)configureTotalBudgetModel {
-    NSMutableArray *categoriesSet = [NSMutableArray new];
     // 图表标题
     NSString *titleSet = @"预算汇总";
     // 数据内容
-    NSArray *seriesSet = [self getTotalBudgetModelSeries];
-    
     AAChartModel *aaChartModel= AAObject(AAChartModel)
     .chartTypeSet(AAChartTypePie)//设置图表的类型(这里以设置的为折线面积图为例)
-    .titleSet(titleSet)//设置图表标题
-    .categoriesSet(categoriesSet)//图表横轴的内容
-    //设置图表 y 轴的单位
-    .seriesSet(seriesSet);
+    .titleSet(titleSet);//设置图表标题
     _aaChartModel = aaChartModel;
-
 }
 
 
 - (void)configureBudgetUsageModel {
     // 图表标题
     NSString *titleSet = @"预算使用详情";
-    
-    // 横轴标题
-    NSMutableArray *categories = [NSMutableArray new];
-    for (FMBudget *budget in [self.databaseManager queryBudgetsForMonth:[NSDate date]]) {
-        [categories addObject:budget.category.categoryTitle];
-    }
-   
+    // 数据内容
     _aaChartModel = AAChartModel.new
     .chartTypeSet(AAChartTypeColumn)
     .titleSet(titleSet)
-//        .stackingSet(AAChartStackingTypeNormal)
     .yAxisGridLineStyleSet([AALineStyle styleWithWidth:@0])
-    .markerRadiusSet(@0)
-    .categoriesSet(categories)
-    .seriesSet([self getBudgetUsageModelSeries]);
+    .markerRadiusSet(@0);
 
 }
 
 
 - (void)configureConsumerPreferenceModel {
-    NSMutableArray *categoriesSet = [NSMutableArray new];
-    NSMutableArray *seriesSet = [NSMutableArray new];
-    NSMutableArray *mutableArray = [NSMutableArray new];
-    for (FMCategory *category in [self.databaseManager queryCategoriesWithPaymentType:expend]) {
-        float totalAmount = [self.databaseManager queryTotleAmountWithCategory:category inMonth:[NSDate date]];
-        if (totalAmount) {
-            [mutableArray addObject: @{@"category" : category, @"totalAmount" : [NSNumber numberWithFloat:totalAmount]}];
-        }
-    }
-    NSInteger maxAmount = 0, index = 0;
-    for (; mutableArray.count > 0; ) {
-        for (NSInteger i = 0; i < mutableArray.count; i++) {
-            NSNumber *currentValue =  mutableArray[i][@"totalAmount"];
-            if (maxAmount < currentValue.floatValue) {
-                maxAmount = currentValue.floatValue;
-                index = i;
-            }
-        }
-        FMCategory *cate =  mutableArray[index][@"category"];
-        [categoriesSet addObject:cate.categoryTitle];
-        [seriesSet addObject:[NSNumber numberWithFloat:maxAmount]];
-        [mutableArray removeObjectAtIndex:index];
-        index = 0;
-        maxAmount = 0;
-    }
-
-    
     AAChartModel *aaChartModel = AAChartModel.new
     .chartTypeSet(AAChartTypeColumn)
-//        .titleSet(@"Colorful Column Chart")
-    .categoriesSet(categoriesSet)
-//        .subtitleSet(@"single data array colorful column chart")
     .borderRadiusSet(@5)
-    .polarSet(true)
-    .seriesSet(@[
-        AASeriesElement.new
-        .nameSet(@"消费偏好")
-        .dataSet(seriesSet),
-               ]);
+    .polarSet(true);
     _aaChartModel = aaChartModel;
 
 }
@@ -302,38 +221,51 @@
 }
 
 
-- (NSArray<AASeriesElement *> *)getRecentConsumptionModelSeries {
+- (void)getRecentConsumptionModelSeries {
     NSMutableArray *seriesSet = [NSMutableArray new];
     NSMutableArray *expenditure = [NSMutableArray new];
     NSMutableArray *income = [NSMutableArray new];
-    float expends = 0, incomes = 0;
-    for (NSDate *day in [[NSDate date] currentWeekDaiesForDate]) {
-        for (FMBill *bill in [self.databaseManager queryBillsWithDay:day]) {
-            if (bill.category.isIncome) {
-                incomes += bill.amount.floatValue;
-            } else {
-                expends += bill.amount.floatValue;
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __strong typeof(self)  strongSelf = weakSelf;
+        // 图表横轴的内容
+        NSMutableArray *categoriesSet = [NSMutableArray new];
+        [categoriesSet addObjectsFromArray:@[@"一", @"二", @"三", @"四", @"五", @"六", @"日"]];
+
+        float expends = 0, incomes = 0;
+        for (NSDate *day in [[NSDate date] currentWeekDaiesForDate]) {
+            for (FMBill *bill in [self.databaseManager queryBillsWithDay:day]) {
+                if (bill.category.isIncome) {
+                    incomes += bill.amount.floatValue;
+                } else {
+                    expends += bill.amount.floatValue;
+                }
             }
+            [expenditure addObject:[NSNumber numberWithFloat:expends]];
+            [income addObject:[NSNumber numberWithFloat:incomes]];
+            expends = 0;
+            incomes = 0;
         }
-        [expenditure addObject:[NSNumber numberWithFloat:expends]];
-        [income addObject:[NSNumber numberWithFloat:incomes]];
-        expends = 0;
-        incomes = 0;
-    }
-    [seriesSet addObject:(AAObject(AASeriesElement)
-                          .borderRadiusTopLeftSet((id)@"20%")
-                          .borderRadiusTopRightSet((id)@"20%")
-                            .nameSet(@"支出")
-                            .dataSet(expenditure))];
-    [seriesSet addObject:(AAObject(AASeriesElement)
-                          .borderRadiusTopLeftSet((id)@"20%")
-                          .borderRadiusTopRightSet((id)@"20%")
-                          .nameSet(@"收入")
-                          .dataSet(income))];
-    return [seriesSet copy];
+        [seriesSet addObject:(AAObject(AASeriesElement)
+                              .borderRadiusTopLeftSet((id)@"20%")
+                              .borderRadiusTopRightSet((id)@"20%")
+                                .nameSet(@"支出")
+                                .dataSet(expenditure))];
+        [seriesSet addObject:(AAObject(AASeriesElement)
+                              .borderRadiusTopLeftSet((id)@"20%")
+                              .borderRadiusTopRightSet((id)@"20%")
+                              .nameSet(@"收入")
+                              .dataSet(income))];
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            [strongSelf.aaChartView aa_onlyRefreshTheChartDataWithChartModelSeries:seriesSet];
+            strongSelf.aaChartModel.categoriesSet(categoriesSet)
+                .seriesSet(seriesSet);
+            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+        });
+    });
 }
 
-- (NSArray<AASeriesElement *> *)getMonthlyConsumptionModelSeries {
+- (void)getMonthlyConsumptionModelSeries {
     NSMutableArray *seriesSet = [NSMutableArray new];
     NSMutableArray *categoriesSet = [NSMutableArray new];
     NSDictionary *gradientColorDic1 =
@@ -342,103 +274,142 @@
                                  endColorString:AARgbaColor(255, 20, 147, 0.3)];//热情的粉红, alpha 透明度 0.3
 
     NSMutableArray *seriesArray = [NSMutableArray new];
-    NSDate *beginDay = [[[NSDate date] getZeroToday] begindayOfMonth];
+    NSDate __block *beginDay = [[[NSDate date] getZeroToday] begindayOfMonth];
     NSDate *lastDay = [[[[NSDate date] getZeroToday] lastdayOfMonth] dateAfterDay:1];
-    float billAmount = 0.f;
-    for (int day = 1; ![beginDay isSameDay:lastDay] ; beginDay = [beginDay dateAfterDay:1], day++) {
-        for (FMBill *bill in [self.databaseManager queryBillsWithDay:beginDay andPaymentType:expend]) {
-            billAmount += bill.amount.floatValue;
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __strong typeof(self)  strongSelf = weakSelf;
+        float billAmount = 0.f;
+        for (int day = 1; ![beginDay isSameDay:lastDay] ; beginDay = [beginDay dateAfterDay:1], day++) {
+            for (FMBill *bill in [self.databaseManager queryBillsWithDay:beginDay andPaymentType:expend]) {
+                billAmount += bill.amount.floatValue;
+            }
+            [seriesArray addObject:[NSNumber numberWithFloat:billAmount]];
+            billAmount = 0.f;
+            [categoriesSet addObject:[NSString stringWithFormat:@"%d", day]];
         }
-        [seriesArray addObject:[NSNumber numberWithFloat:billAmount]];
-        billAmount = 0.f;
-        [categoriesSet addObject:[NSString stringWithFormat:@"%d", day]];
-    }
-    [seriesSet addObject:AASeriesElement.new.nameSet(@"当日消费")
-                             .lineWidthSet(@3.0)
-                             .colorSet(AARgbaColor(220, 20, 60, 1.0))//猩红色, alpha 透明度 1
-                             .fillColorSet((id)gradientColorDic1)
-                           .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
-                           .dataSet(seriesArray)];
-    return [seriesSet copy];
+        [seriesSet addObject:AASeriesElement.new.nameSet(@"当日消费")
+                                 .lineWidthSet(@3.0)
+                                 .colorSet(AARgbaColor(220, 20, 60, 1.0))//猩红色, alpha 透明度 1
+                                 .fillColorSet((id)gradientColorDic1)
+                               .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+                               .dataSet(seriesArray)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            strongSelf.aaChartModel.categoriesSet(categoriesSet)
+                .seriesSet(seriesSet);
+            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+        });
+    });
 }
 
-- (NSArray<AASeriesElement *> *)getTotalBudgetModelSeries {
+- (void)getTotalBudgetModelSeries {
     NSMutableArray *seriesSet = [NSMutableArray new];
     NSMutableArray *seriesArray = [NSMutableArray new];
-    for (FMBudget *budget in [self.databaseManager queryBudgetsForMonth:[NSDate date]]) {
-        [seriesArray addObject:@[budget.category.categoryTitle.copy, budget.amount]];
-    }
-    [seriesSet addObject:AASeriesElement.new.nameSet(@"预算")
-                             .innerSizeSet(@"40%")//内部圆环半径大小占比
-                             .borderWidthSet(@0)//描边的宽度
-                             .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
-         .dataSet(seriesArray)];
-    return [seriesSet copy];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __strong typeof(self)  strongSelf = weakSelf;
+        for (FMBudget *budget in [self.databaseManager queryBudgetsForMonth:[NSDate date]]) {
+            [seriesArray addObject:@[budget.category.categoryTitle.copy, budget.amount]];
+        }
+        [seriesSet addObject:AASeriesElement.new.nameSet(@"预算")
+                                 .innerSizeSet(@"40%")//内部圆环半径大小占比
+                                 .borderWidthSet(@0)//描边的宽度
+                                 .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
+             .dataSet(seriesArray)];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            strongSelf.aaChartModel.seriesSet(seriesSet);
+            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+        });
+
+    });
 }
 
-- (NSArray<AASeriesElement *> *)getBudgetUsageModelSeries {
+- (void)getBudgetUsageModelSeries {
     NSMutableArray *categories = [NSMutableArray new];
     NSMutableArray *seriesArray = [NSMutableArray new];
-    for (FMBudget *budget in [self.databaseManager queryBudgetsForMonth:[NSDate date]]) {
-        [categories addObject:budget.category.categoryTitle];
-        [seriesArray addObject:budget.amount];
-    }
-    AAColumn *column1 = AAColumn.new
-                        .nameSet(@"预算")
-                        .colorSet(@"#D8D8D8")
-                        .dataSet(seriesArray.copy)
-                        .groupingSet(false);
-
-    //
-    [seriesArray removeAllObjects];
-    for (NSString *categoryTitle in categories) {
-        float cost = 0.f;
-        for (FMBill *bill in [self.databaseManager queryBillsWithCategoryTitle:categoryTitle inMonth:[NSDate date]]) {
-            cost += bill.amount.floatValue;
-        };
-        [seriesArray addObject:[NSNumber numberWithFloat:cost]];
-        cost = 0.f;
-    }
-    AAColumn *column2 = AAColumn.new
-                        .nameSet(@"已使用")
-                        // .colorSet(@"#D8D8D8")
-                        .dataSet(seriesArray.copy);
     
-    return @[column1, column2];
+//    return @[column1, column2];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __strong typeof(self)  strongSelf = weakSelf;
+        for (FMBudget *budget in [self.databaseManager queryBudgetsForMonth:[NSDate date]]) {
+            [categories addObject:budget.category.categoryTitle];
+            [seriesArray addObject:budget.amount];
+        }
+        AAColumn *column1 = AAColumn.new
+                            .nameSet(@"预算")
+                            .colorSet(@"#D8D8D8")
+                            .dataSet(seriesArray.copy)
+                            .groupingSet(false);
+
+        //
+        [seriesArray removeAllObjects];
+        for (NSString *categoryTitle in categories) {
+            float cost = 0.f;
+            for (FMBill *bill in [self.databaseManager queryBillsWithCategoryTitle:categoryTitle inMonth:[NSDate date]]) {
+                cost += bill.amount.floatValue;
+            };
+            [seriesArray addObject:[NSNumber numberWithFloat:cost]];
+            cost = 0.f;
+        }
+        AAColumn *column2 = AAColumn.new
+                            .nameSet(@"已使用")
+                            // .colorSet(@"#D8D8D8")
+                            .dataSet(seriesArray.copy);
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            strongSelf.aaChartModel.categoriesSet(categories)
+                .seriesSet(@[column1, column2]);
+            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+        });
+    });
 }
 
-- (NSArray<AASeriesElement *> *)getConsumerPreferenceModelSeries {
+- (void)getConsumerPreferenceModelSeries {
     NSMutableArray *categoriesSet = [NSMutableArray new];
     NSMutableArray *seriesArray = [NSMutableArray new];
     NSMutableArray *mutableArray = [NSMutableArray new];
-    for (FMCategory *category in [self.databaseManager queryCategoriesWithPaymentType:expend]) {
-        float totalAmount = [self.databaseManager queryTotleAmountWithCategory:category inMonth:[NSDate date]];
-        if (totalAmount) {
-            [mutableArray addObject: @{@"category" : category, @"totalAmount" : [NSNumber numberWithFloat:totalAmount]}];
-        }
-    }
-    NSInteger maxAmount = 0, index = 0;
-    for (; mutableArray.count > 0; ) {
-        for (NSInteger i = 0; i < mutableArray.count; i++) {
-            NSNumber *currentValue =  mutableArray[i][@"totalAmount"];
-            if (maxAmount < currentValue.floatValue) {
-                maxAmount = currentValue.floatValue;
-                index = i;
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __strong typeof(self)  strongSelf = weakSelf;
+        for (FMCategory *category in [self.databaseManager queryCategoriesWithPaymentType:expend]) {
+            float totalAmount = [self.databaseManager queryTotleAmountWithCategory:category inMonth:[NSDate date]];
+            if (totalAmount) {
+                [mutableArray addObject: @{@"category" : category, @"totalAmount" : [NSNumber numberWithFloat:totalAmount]}];
             }
         }
-        FMCategory *cate =  mutableArray[index][@"category"];
-        [categoriesSet addObject:cate.categoryTitle];
-        [seriesArray addObject:[NSNumber numberWithFloat:maxAmount]];
-        [mutableArray removeObjectAtIndex:index];
-        index = 0;
-        maxAmount = 0;
-    }
-    NSArray *seriesSet = @[
-        AASeriesElement.new
-        .nameSet(@"消费偏好")
-        .dataSet(seriesArray),
-    ];
-    return [seriesSet copy];
+        NSInteger maxAmount = 0, index = 0;
+        for (; mutableArray.count > 0; ) {
+            for (NSInteger i = 0; i < mutableArray.count; i++) {
+                NSNumber *currentValue =  mutableArray[i][@"totalAmount"];
+                if (maxAmount < currentValue.floatValue) {
+                    maxAmount = currentValue.floatValue;
+                    index = i;
+                }
+            }
+            FMCategory *cate =  mutableArray[index][@"category"];
+            [categoriesSet addObject:cate.categoryTitle];
+            [seriesArray addObject:[NSNumber numberWithFloat:maxAmount]];
+            [mutableArray removeObjectAtIndex:index];
+            index = 0;
+            maxAmount = 0;
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            strongSelf.aaChartModel.categoriesSet(categoriesSet)
+                .seriesSet(@[
+                AASeriesElement.new
+                .nameSet(@"消费偏好")
+                .dataSet(seriesArray),
+                       ]);
+            [strongSelf.aaChartView aa_refreshChartWithChartModel:strongSelf.aaChartModel];
+        });
+
+    });
 }
 
 
